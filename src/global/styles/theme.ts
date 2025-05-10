@@ -5,13 +5,14 @@ export default {
         background: '#f5f5f5',
         error: '#b00200',
         text: '#000000',
+        shape: '#FFFFFF',
     },
 
     fonts: {
-        regular: 'Roboto-Regular',
-        medium: 'Roboto-Medium',
-        light: 'Roboto-Light',
-        thin: 'Roboto-Thin',
+        regular: 'Poppins_400Regular',
+        medium: 'Poppins_500Medium',
+        bold: 'Poppins_700Bold',
+        black: 'Poppins_900Black',
     },
 
     spacing: {
