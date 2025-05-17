@@ -2,10 +2,14 @@ export default {
     colors: {
         primary: '#000899',
         secondary: '#8200CE',
+        tertiary: '#F368E0',
         background: '#f5f5f5',
         error: '#b00200',
         text: '#000000',
+        textLight: '#555555',
         shape: '#FFFFFF',
+        success: '#4caf50',
+        successLight: '#A5D6A7',
     },
 
     fonts: {
@@ -26,5 +30,12 @@ export default {
         medium: 8,
         large: 16,
         xlarge: 32,
+    },
+    fontSize: {
+        small: 14,
+        medium: 18,
+        large: 22,
+        xlarge: 26,
+        xxlarge: 30,
     }
 }

@@ -1,4 +1,5 @@
 import styled from "styled-components/native";
+import { Feather } from '@expo/vector-icons';
 import {
   RFPercentage,
   RFValue,
@@ -6,7 +7,7 @@ import {
 
 export const Container = styled.View`
     flex: 1;
-    background-color: ${({ theme }) => theme.colors.primary};
+    background-color: ${({ theme }) => theme.colors.background};
 
     `
 
@@ -57,4 +58,21 @@ export const UserName = styled.Text`
   color: ${ ({theme}) => theme.colors.shape };
   font-size: ${ RFValue(18) }px;
   font-family: ${ ({theme}) => theme.fonts.regular };
+`
+
+export const Icon = styled(Feather)`
+
+  color: ${({theme}) => theme.colors.tertiary};
+  font-size: ${RFValue(24)}px;
+
+`
+export const HighlightCards = styled.ScrollView.attrs({
+
+    horizontal: true,
+    showsHorizontalScrollIndicator : false,
+    contentContainerStyle: {paddingHorizontal: 24}
+
+})`
+
+
 `

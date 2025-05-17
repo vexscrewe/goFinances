@@ -1,5 +1,6 @@
-import { Feather } from '@expo/vector-icons'
 
+
+import { HighlightCard } from "../../components/HighlightCard";
 import { 
     Container, 
     Header,
@@ -9,6 +10,9 @@ import {
     UserGreeting,
     UserName,
     UserWrapper,
+    Icon,
+    HighlightCards,
+    
 }   from "./styles";
 
 export function Dashboard(){
@@ -24,10 +28,20 @@ export function Dashboard(){
                     </User>
                 </UserInfo>
 
-                <Feather name="power" />
+                <Icon name="power" />
 
             </UserWrapper>
           </Header>
+          
+          <HighlightCards
+            horizontal
+            showsHorizontalScrollIndicator={false}
+            contentContainerStyle='paddingHorizontal: 24px'
+          >
+            <HighlightCard/>
+            <HighlightCard/>
+            <HighlightCard/>
+           </HighlightCards>
         </Container>
     );
 }
