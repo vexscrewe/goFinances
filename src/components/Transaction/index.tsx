@@ -6,6 +6,9 @@ import {
     Footer,
     Amount,
     LastTransaction,
+    Text,
+    IconGroup
+
 }   from "./styles";
 
 interface Props {
@@ -21,31 +24,33 @@ const icon = {
     total: 'dollar-sign',
 }
 
-export function HighlightCard({ type, title, amount, lastTransaction }: Props){
+export function Transaction(){
     return(
-        <Container type={ type }>
+        <Container>
 
             <Header>
 
-                <Title type={ type }>
-                    { title }
+                <Title>
+                    Desenvolvimento de site
                 </Title>
 
-                <Icon 
-                name= { icon[type] }
-                type={ type }
-                />
+                <Amount>
+                    R$ 12.000,00
+                </Amount>
+
+                
 
             </Header>
 
             <Footer>
 
-                <Amount type ={ type }>
-                    { amount }
-                </Amount>
+                <IconGroup>
+                <Icon name='dollar-sign'/>
+                <Text>vendas</Text>
+                </IconGroup>
 
-                <LastTransaction type={type}>
-                    { lastTransaction }
+                <LastTransaction>
+                    13/04/2025
                 </LastTransaction>
 
             </Footer>

@@ -1,6 +1,7 @@
 
 
 import { HighlightCard } from "../../components/HighlightCard";
+import { Transaction } from "../../components/Transaction";
 import { 
     Container, 
     Header,
@@ -12,8 +13,11 @@ import {
     UserWrapper,
     Icon,
     HighlightCards,
+    Transactions,
+    Text,
     
 }   from "./styles";
+
 
 export function Dashboard(){
     return (
@@ -33,15 +37,55 @@ export function Dashboard(){
             </UserWrapper>
           </Header>
           
-          <HighlightCards
-            horizontal
-            showsHorizontalScrollIndicator={false}
-            contentContainerStyle='paddingHorizontal: 24px'
-          >
-            <HighlightCard/>
-            <HighlightCard/>
-            <HighlightCard/>
-           </HighlightCards>
+          <HighlightCards>
+
+            <HighlightCard
+            
+              type='up'
+              title='Entradas'
+              amount='R$ 17.000,00'
+              lastTransaction='Última entrada em 16 de Junho'
+
+            />
+
+            <HighlightCard
+            
+              type='down'
+              title='Saídas'
+              amount='R$ 10.000,00'
+              lastTransaction='Última entrada em 10 de Junho'
+
+            />
+
+            <HighlightCard
+            
+              type='total'
+              title='Total'
+              amount='R$ 7.000,00'
+              lastTransaction='De 1 a 16 de Junho'
+
+            />
+
+          </HighlightCards>
+
+          <Transactions>
+
+            <Text>Listagem</Text>
+
+            <Transaction>
+              
+            </Transaction>
+
+            <Transaction>
+              
+            </Transaction>
+
+            <Transaction>
+              
+            </Transaction>
+
+          </Transactions>
+
         </Container>
     );
 }
