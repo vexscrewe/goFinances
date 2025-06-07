@@ -81,17 +81,12 @@ export const HighlightCards = styled.ScrollView.attrs({
 
 
 
-export const Transactions = styled.ScrollView.attrs({
-
-  vertical: true,
-  showsVerticalScrollIndicator : false,
-  contentContainerStyle: {paddingVertical: 10}
-
-})`
+export const Transactions = styled.View`
 
   flex: 1;
   padding-left: 25px;
   z-index: 1;
+  
 `
 export const Text = styled.Text`
 
@@ -99,6 +94,7 @@ export const Text = styled.Text`
   font-size: ${ RFValue(14) }px;
   font-family: ${ ({theme}) => theme.fonts.regular };
   margin-top: 50px;
+`
 
-
+export const TransactionList = styled.FlatList`
 `

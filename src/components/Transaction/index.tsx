@@ -6,36 +6,43 @@ import {
     Footer,
     Amount,
     LastTransaction,
-    Text,
-    IconGroup
+    Category,
+    CategoryName,
 
 }   from "./styles";
 
-interface Props {
-    type: 'up' | 'down' | 'total'
+
+
+interface Category{
+    name: string
+    icon: string
+}
+
+interface TransactionProps {
+    type: 'positive' | 'negative'
     title: string
     amount: string
-    lastTransaction: string
+    category: Category
+    date: string
 }
 
-const icon = {
-    up: 'arrow-up-circle',
-    down: 'arrow-down-circle',
-    total: 'dollar-sign',
+interface Props {
+    data: TransactionProps
 }
 
-export function Transaction(){
+export function Transaction({data}: Props){
     return(
         <Container>
 
             <Header>
 
                 <Title>
-                    Desenvolvimento de site
+                    {data.title}
                 </Title>
 
-                <Amount>
-                    R$ 12.000,00
+                <Amount type={data.type}>
+                    {data.type === 'negative' && '- '}
+                    {data.amount}
                 </Amount>
 
                 
@@ -44,14 +51,19 @@ export function Transaction(){
 
             <Footer>
 
-                <IconGroup>
-                <Icon name='dollar-sign'/>
-                <Text>vendas</Text>
-                </IconGroup>
-
-                <LastTransaction>
-                    13/04/2025
-                </LastTransaction>
+                <Category>
+                        <CategoryName>
+                            <Icon name={data.category?.icon}></Icon>
+                            {data.category?.name}   
+                        </CategoryName>
+                        
+                        <CategoryName>
+                            {data.date}
+                        </CategoryName>
+                    
+               
+                </Category>
+                
 
             </Footer>
 

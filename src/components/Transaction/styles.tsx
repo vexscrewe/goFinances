@@ -2,6 +2,9 @@ import styled, { css } from "styled-components/native"
 import { Feather } from '@expo/vector-icons'
 import { RFValue } from "react-native-responsive-fontsize"
 
+interface TransactionProps {
+    type: 'positive' | 'negative'
+}
 
 export const Container = styled.View`
 
@@ -22,22 +25,21 @@ export const Title = styled.Text`
     font-family: ${({theme}) => theme.fonts.regular};
     color: ${({theme, type}) => theme.colors.text};
 `
-export const Icon = styled(Feather)`
-    font-size: ${({theme}) => theme.fontSize.medium}px;
-    font-family: ${({theme}) => theme.fonts.regular};
-    color: ${({theme}) => theme.colors.textLight};
 
-`
 export const Footer = styled.View`
     flex-direction: row;
     justify-content: space-between;
     padding-top: 25px;
     
 `
-export const Amount = styled.Text`
+export const Amount = styled.Text<TransactionProps>`
+
+    color: ${({theme, type}) => 
+        type ==='negative' ? theme.colors.error : theme.colors.success};   
+
     font-size: ${({theme}) => theme.fontSize.medium};
     font-family: ${({theme}) => theme.fonts.medium};
-    color: ${({theme, type}) => theme.colors.success};
+    
 `
 export const LastTransaction = styled.Text`
     font-size: ${({theme}) => theme.fontSize.small};
@@ -53,4 +55,28 @@ export const Text = styled.Text`
 `
 export const IconGroup = styled.View`
     flex-direction: row;
+`
+
+export const Category = styled.View`
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+`
+
+export const CategoryName = styled.Text`
+    font-size: ${RFValue(14)}px;
+    margin-left: 17px;
+    color: ${({theme}) => theme.colors.text_light};
+`
+
+export const Icon = styled(Feather)`
+    font-size: ${RFValue(20)}px;
+    color: ${({theme}) => theme.colors.text_light};
+
+`
+
+export const Date = styled.Text`
+    font-size: ${RFValue(14)}px;
+    color: ${({theme}) => theme.colors.text_light};
+
 `

@@ -15,11 +15,48 @@ import {
     HighlightCards,
     Transactions,
     Text,
+    TransactionList,
     
 }   from "./styles";
-
+    
 
 export function Dashboard(){
+
+  const data = [{
+        title:'Desenvolvimento de site',
+        type: 'negative',
+        amount:'R$ 12.000,00',
+        category:{
+            name: 'vendas',
+            icon: 'dollar-sign',
+        },
+        date: '12/05/2025',
+    },
+    {
+      title:'Desenvolvimento de site',
+      type: 'positive',
+        amount:'R$ 12.000,00',
+        category:{
+            name: 'vendas',
+            icon: 'dollar-sign',
+        },
+        date: '12/05/2025',
+
+    },
+
+    {
+      title:'Desenvolvimento de site',
+      type: 'positive',
+        amount:'R$ 12.000,00',
+        category:{
+            name: 'vendas',
+            icon: 'dollar-sign',
+        },
+        date: '12/05/2025',
+
+    },
+      ]
+  
     return (
         <Container>
           <Header>
@@ -72,18 +109,11 @@ export function Dashboard(){
 
             <Text>Listagem</Text>
 
-            <Transaction>
+            <TransactionList
+            data={data}
+            renderItem={({ item }) => <Transaction data={item}/>}
+            />
               
-            </Transaction>
-
-            <Transaction>
-              
-            </Transaction>
-
-            <Transaction>
-              
-            </Transaction>
-
           </Transactions>
 
         </Container>
