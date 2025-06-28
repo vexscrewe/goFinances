@@ -2,6 +2,7 @@
 
 import { HighlightCard } from "../../components/HighlightCard";
 import { Transaction } from "../../components/Transaction";
+import { TransactionProps } from "../../components/Transaction";
 import { 
     Container, 
     Header,
@@ -19,10 +20,14 @@ import {
     
 }   from "./styles";
     
+export interface DataListProps extends TransactionProps{
+  id: string;
+}
 
 export function Dashboard(){
 
-  const data = [{
+  const data: DataListProps[] = [{
+        id: '1',
         title:'Desenvolvimento de site',
         type: 'negative',
         amount:'R$ 12.000,00',
@@ -33,6 +38,7 @@ export function Dashboard(){
         date: '12/05/2025',
     },
     {
+      id:'2',
       title:'Desenvolvimento de site',
       type: 'positive',
         amount:'R$ 12.000,00',
@@ -45,6 +51,7 @@ export function Dashboard(){
     },
 
     {
+      id:'3',
       title:'Desenvolvimento de site',
       type: 'positive',
         amount:'R$ 12.000,00',

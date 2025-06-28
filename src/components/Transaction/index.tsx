@@ -18,7 +18,7 @@ interface Category{
     icon: string
 }
 
-interface TransactionProps {
+export interface TransactionProps {
     type: 'positive' | 'negative'
     title: string
     amount: string
