@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { VictoryPie } from 'victory-native';
+import { VictoryPie } from 'victory-pie';
 import { RFValue } from 'react-native-responsive-fontsize';
 
 import { api } from '../../services/api';
